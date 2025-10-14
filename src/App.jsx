@@ -6,6 +6,8 @@ import Hero from './components/Hero';
 import EmailCapture from './components/EmailCapture';
 import Features from './components/Features';
 import Footer from './components/Footer';
+import RwenzoriMountains from './components/RwenzoriMountains';
+import ImageGrid from './components/ImageGrid';
 
 function App() {
   return (
@@ -15,16 +17,16 @@ function App() {
         <meta name="description" content="Join the Rwenzori Awakening coffee revolution. Be the first to experience our premium red2roast coffee from the Mountains of the Moon. Sign up for exclusive early access!" />
       </Helmet>
       
-      <div className="min-h-screen bg-gray-50 overflow-hidden">
+      <div className="h-auto bg-white flex flex-col">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative"
+          className="relative flex flex-col"
         >
           <Hero />
-          <EmailCapture />
-          <Features />
+          <RwenzoriMountains/>
+          <ImageGrid/>
           <Footer />
         </motion.div>
         <Toaster />

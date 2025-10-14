@@ -1,53 +1,121 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import avatar from '../assets/primary_avatar.jpg'
-import { Coffee, Mountain, Mail, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { Description, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalContent, setModalContent] = useState('');
+
+  const openModal = (content) => {
+    setModalContent(content);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => setIsOpen(false);
+
   return (
-    <footer className="py-16 px-4 bg-white border-t border-gray-200">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="flex justify-center mb-8">
-            <img
-              src={avatar}
-              alt="Red2Roast Logo"
-              className="w-72 h-auto"
-            />
+    <footer className="bg-[#023548] text-white mt-12 py-6 md:py-12 md:mt-24">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        {/* Social Media */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+          <div className="flex space-x-4 text-2xl">
+            <a href="#" onClick={() => openModal('Follow us on Facebook!')}>
+              <FaFacebook />
+            </a>
+            <a href="#" onClick={() => openModal('Follow us on Twitter!')}>
+              <FaTwitter />
+            </a>
+            <a href="#" onClick={() => openModal('Follow us on Instagram!')}>
+              <FaInstagram />
+            </a>
           </div>
+        </div>
 
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">
-            <span className="gradient-text">Rwenzori</span> Awakening
-          </h3>
-          
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Premium Red2Roast Coffee from the Mountains of the Moon
-          </p>
+        {/* Products */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Products</h3>
+          <ul className="space-y-2">
+            <li>
+              <button onClick={() => openModal('Explore our Coffee Beans')} className="hover:underline">Coffee Beans</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Discover our Ground Coffee')} className="hover:underline">Ground Coffee</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Business Solutions for Coffee')} className="hover:underline">Business</button>
+            </li>
+          </ul>
+        </div>
 
-          <div className="flex flex-wrap justify-center gap-8 mb-8 text-gray-700">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" />
-              <span>Rwenzori Mountains, Uganda</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <span>hello@red2roast.com</span>
-            </div>
-          </div>
+        {/* Customer Service */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
+          <ul className="space-y-2">
+            <li>
+              <button onClick={() => openModal('Manage your orders')} className="hover:underline">Orders</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Payment information')} className="hover:underline">Payment</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Shipping & Return info')} className="hover:underline">Shipping & Return</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Terms & Conditions')} className="hover:underline">Terms & Conditions</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Frequently Asked Questions')} className="hover:underline">FAQ</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Login to your account')} className="hover:underline">Login</button>
+            </li>
+          </ul>
+        </div>
 
-          <div className="pt-8 border-t border-gray-200">
-            <p className="text-gray-500">
-              © 2025 All rights reserved. | A Red2Roast Coffee Experience
-            </p>
-          </div>
-        </motion.div>
+        {/* About Red2Roast */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">About Red2Roast</h3>
+          <ul className="space-y-2">
+            <li>
+              <button onClick={() => openModal('Learn about our company')} className="hover:underline">Our Company</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Take our Coffee Quiz')} className="hover:underline">Advice / Coffee Quiz</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Join the Coffee Club')} className="hover:underline">Coffee Club</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Visit our shops')} className="hover:underline">Shops</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Learn about our Farmer Program')} className="hover:underline">Farmer Program</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Red Cherry Foundation')} className="hover:underline">Red Cherry Foundation</button>
+            </li>
+            <li>
+              <button onClick={() => openModal('Our mission')} className="hover:underline">Mission</button>
+            </li>
+          </ul>
+        </div>
       </div>
+
+      {/* Modal */}
+      
+      <Dialog open={isOpen} onClose={closeModal} className="relative z-50">
+        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <DialogPanel className="max-w-lg space-y-4 border bg-white p-12">
+            <DialogTitle className="font-bold">Info</DialogTitle>
+            <Description>{modalContent}</Description>
+            <div className="flex gap-4">
+              <button onClick={closeModal}>Cancel</button>
+            </div>
+          </DialogPanel>
+        </div>
+      </Dialog>
     </footer>
   );
 };
