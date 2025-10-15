@@ -3,8 +3,6 @@ import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Toaster } from './components/ui/toaster';
 import Hero from './components/Hero';
-import EmailCapture from './components/EmailCapture';
-import Features from './components/Features';
 import Footer from './components/Footer';
 import RwenzoriMountains from './components/RwenzoriMountains';
 import ImageGrid from './components/ImageGrid';

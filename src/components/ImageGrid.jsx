@@ -4,7 +4,7 @@ import assets from '../assets/assets';
 const ImageGrid = () => {
   return (
     <section className="bg-white mt-4 flex items-center justify-center md:mt-8 lg:mt-16">
-      <div className="grid w-11/12 grid-cols-1 justify-items-center gap-2 md:w-11/12 md:grid-cols-2 md:gap-x-2 md:gap-y-6 lg:w-10/12 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4 xl:w-8/12 xl:gap-6">
+      <div className="grid w-11/12 grid-cols-1 justify-items-center gap-2 md:w-11/12 md:grid-cols-2 md:gap-x-2 md:gap-y-6 lg:w-10/12 lg:grid-cols-3 lg:grid-rows-2 lg:gap-4 xl:w-8/12 xl:gap-4">
         
         {/* Image 1 */}
         <div className="h-full w-full md:h-80 md:w-80 lg:h-80 lg:w-80 xl:h-96 xl:w-96">

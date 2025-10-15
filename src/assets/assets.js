@@ -5,6 +5,9 @@ import grid3 from '../assets/grid/grid3.jpg';
 import grid4 from '../assets/grid/grid4.jpg';
 import grid5 from '../assets/grid/grid5.jpg';
 import grid6 from '../assets/grid/grid6.jpg';
+import hero from '../assets/hero/hero.jpg';
+import coffee from '../assets/packaging/coffee.png';
+import logo from '../assets/logos/secondary_logo.png';
 
 // Export them as an object
 const assets = {
@@ -14,6 +17,9 @@ const assets = {
   grid4,
   grid5,
   grid6,
+  hero,
+  coffee,
+  logo
 };
 
 export default assets;

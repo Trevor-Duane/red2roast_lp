@@ -19,7 +19,10 @@ const RwenzoriMountains = () => {
       <div className="w-11/12 md:w-11/12 lg:w-10/12 xl:w-8/12">
         <h6 className="text-lg font-semibold">Rwenzori Mountains</h6>
         <p className="text-base font-light">
-          Sourced from the legendary Mountains of the Moon in Uganda, where altitude and climate create the perfect growing conditions. Direct trade partnerships with local farmers ensure fair compensation and sustainable farming practices. Hand-picked at peak ripeness, each bean is carefully selected to ensure only the finest quality reaches your cup.
+            High in the Rwenzori Mountains, our farmer-led initiative perfects a premium Arabica single-origin. We guarantee the precise, complex flavor of this unique terroir through verifiable, constant investment.
+        </p>
+        <p className="text-base font-light mt-2">
+            The first harvest lots are extremely limited.
         </p>
       </div>
     </section>
